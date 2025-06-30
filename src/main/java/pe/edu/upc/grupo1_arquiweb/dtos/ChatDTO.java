@@ -3,7 +3,7 @@ package pe.edu.upc.grupo1_arquiweb.dtos;
 import java.time.LocalDate;
 
 public class ChatDTO {
-    //ggood
+
     private Long idChat;
     private LocalDate fechaInicioChat;
     private Long idUser;
