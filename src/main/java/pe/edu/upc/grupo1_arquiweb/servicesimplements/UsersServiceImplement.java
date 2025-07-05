@@ -32,4 +32,9 @@ public class UsersServiceImplement implements IUsersService {
     public void delete(Long id) {
         uR.deleteById(id);
     }
+
+    @Override
+    public Users searchId(Long id) {
+        return uR.findById(id).orElse(new Users());
+    }
 }

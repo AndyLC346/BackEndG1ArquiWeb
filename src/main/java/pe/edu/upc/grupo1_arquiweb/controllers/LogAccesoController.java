@@ -43,4 +43,14 @@ public class LogAccesoController {
     public void eliminar(@PathVariable("id") Long id) {
         laS.delete(id);
     }
+
+
+    @GetMapping("/{id}")
+    public LogAccesoDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        LogAccesoDTO dto = m.map(laS.searchId(id), LogAccesoDTO.class);
+        return dto;
+    }
 }
+
+

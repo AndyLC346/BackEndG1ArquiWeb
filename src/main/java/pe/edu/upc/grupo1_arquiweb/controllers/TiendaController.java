@@ -42,4 +42,18 @@ public class TiendaController {
     public void eliminar(@PathVariable("id") Long id) {
         tS.delete(id);
     }
+
+    @GetMapping("/{id}")
+    public TiendaDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        TiendaDTO dto = m.map(tS.searchId(id), TiendaDTO.class);
+        return dto;
+    }
+
+    @GetMapping("/busquedasnombre")
+    public List<TiendaDTO> buscarNombre(@RequestParam("nom") String nom) {
+        return tS.search(nom).stream()
+                .map(p -> new ModelMapper().map(p, TiendaDTO.class))
+                .collect(Collectors.toList());
+    }
 }

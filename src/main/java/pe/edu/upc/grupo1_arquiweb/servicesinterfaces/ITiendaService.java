@@ -10,4 +10,7 @@ public interface ITiendaService {
     public void insert (Tienda t);
     public void update(Tienda t);
     public void delete (Long id);
+    public Tienda searchId(Long id);
+    public List<Tienda> search(String name);
+
 }

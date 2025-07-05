@@ -33,4 +33,9 @@ public class ChatServiceImplement implements IChatService {
     public void delete(Long id) {
         cR.deleteById(id);
     }
+
+    @Override
+    public Chat searchId(Long id) {
+        return cR.findById(id).orElse(new Chat());
+    }
 }

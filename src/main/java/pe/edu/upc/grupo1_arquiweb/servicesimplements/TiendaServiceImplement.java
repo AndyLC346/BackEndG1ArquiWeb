@@ -32,4 +32,14 @@ public class TiendaServiceImplement implements ITiendaService {
     public void delete(Long id) {
         tR.deleteById(id);
     }
+
+    @Override
+    public Tienda searchId(Long id) {
+        return tR.findById(id).orElse(new Tienda());
+    }
+
+    @Override
+    public List<Tienda> search(String name) {
+        return tR.buscar(name);
+    }
 }

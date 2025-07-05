@@ -1,14 +1,18 @@
 package pe.edu.upc.grupo1_arquiweb.dtos;
 
+import pe.edu.upc.grupo1_arquiweb.entities.MetodoPago;
+import pe.edu.upc.grupo1_arquiweb.entities.Producto;
+import pe.edu.upc.grupo1_arquiweb.entities.Users;
+
 import java.time.LocalDate;
 
 public class CarritoCompraDTO {
 
     private Long idCarritoCompra;
     private LocalDate fechaCreaCarritoCompra;
-    private Long idMetodoPago;
-    private Long idProducto;
-    private Long idUser;
+    private MetodoPago metodoPago;
+    private Producto producto;
+    private Users user;
 
     public Long getIdCarritoCompra() {
         return idCarritoCompra;
@@ -26,27 +30,27 @@ public class CarritoCompraDTO {
         this.fechaCreaCarritoCompra = fechaCreaCarritoCompra;
     }
 
-    public Long getIdMetodoPago() {
-        return idMetodoPago;
+    public MetodoPago getMetodoPago() {
+        return metodoPago;
     }
 
-    public void setIdMetodoPago(Long idMetodoPago) {
-        this.idMetodoPago = idMetodoPago;
+    public void setMetodoPago(MetodoPago metodoPago) {
+        this.metodoPago = metodoPago;
     }
 
-    public Long getIdProducto() {
-        return idProducto;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setIdProducto(Long idProducto) {
-        this.idProducto = idProducto;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
-    public Long getIdUser() {
-        return idUser;
+    public Users getUser() {
+        return user;
     }
 
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
+    public void setUser(Users user) {
+        this.user = user;
     }
 }

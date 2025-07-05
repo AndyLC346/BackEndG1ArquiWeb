@@ -33,4 +33,9 @@ public class LogAccesoServiceImplement implements ILogAccesoService {
     public void delete(Long id) {
         laR.deleteById(id);
     }
+
+    @Override
+    public LogAcceso searchId(Long id) {
+        return laR.findById(id).orElse(new LogAcceso());
+    }
 }

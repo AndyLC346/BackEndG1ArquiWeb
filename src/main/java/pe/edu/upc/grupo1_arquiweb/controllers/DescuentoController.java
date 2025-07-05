@@ -43,4 +43,11 @@ public class DescuentoController {
     public void eliminar(@PathVariable("id") Long id) {
         dS.delete(id);
     }
+
+    @GetMapping("/{id}")
+    public DescuentoDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        DescuentoDTO dto = m.map(dS.searchId(id), DescuentoDTO.class);
+        return dto;
+    }
 }

@@ -10,4 +10,5 @@ public interface IChatService {
     public void insert (Chat c);
     public void update(Chat c);
     public void delete (Long id);
+    public Chat searchId(Long id);
 }

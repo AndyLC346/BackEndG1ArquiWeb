@@ -10,4 +10,5 @@ public interface IDescuentoService {
     public void insert (Descuento d);
     public void update(Descuento d);
     public void delete (Long id);
+    public Descuento searchId(Long id);
 }

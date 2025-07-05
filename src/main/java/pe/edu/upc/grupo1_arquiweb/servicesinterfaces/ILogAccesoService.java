@@ -10,4 +10,5 @@ public interface ILogAccesoService {
     public void insert (LogAcceso la);
     public void update(LogAcceso la);
     public void delete (Long id);
+    public LogAcceso searchId(Long id);
 }

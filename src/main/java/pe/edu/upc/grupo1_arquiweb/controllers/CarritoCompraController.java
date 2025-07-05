@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/carrito_de_compra")
+@RequestMapping("/carritocompra")
 public class CarritoCompraController {
 
     @Autowired
@@ -42,5 +42,12 @@ public class CarritoCompraController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Long id) {
         ccS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public CarritoCompraDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        CarritoCompraDTO dto = m.map(ccS.searchId(id), CarritoCompraDTO.class);
+        return dto;
     }
 }

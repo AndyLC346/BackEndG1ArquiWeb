@@ -10,4 +10,6 @@ public interface IProductoService {
     public void insert (Producto p);
     public void update(Producto p);
     public void delete (Long id);
+    public Producto searchId(Long id);
+    public List<Producto> search(String name);
 }

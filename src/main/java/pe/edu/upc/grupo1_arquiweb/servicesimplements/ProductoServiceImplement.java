@@ -33,4 +33,15 @@ public class ProductoServiceImplement implements IProductoService {
     public void delete(Long id) {
         pR.deleteById(id);
     }
+
+    @Override
+    public Producto searchId(Long id) {
+        return pR.findById(id).orElse(new Producto());
+    }
+
+    @Override
+    public List<Producto> search(String name) {
+        return pR.buscar(name);
+    }
+
 }

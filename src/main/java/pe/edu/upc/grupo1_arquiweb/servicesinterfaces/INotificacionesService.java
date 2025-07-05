@@ -10,4 +10,5 @@ public interface INotificacionesService {
     public void insert (Notificaciones n);
     public void update(Notificaciones n);
     public void delete (Long id);
+    public Notificaciones searchId(Long id);
 }

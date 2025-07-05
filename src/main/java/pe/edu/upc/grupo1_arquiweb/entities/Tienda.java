@@ -1,11 +1,6 @@
 package pe.edu.upc.grupo1_arquiweb.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Tienda")
@@ -30,16 +25,24 @@ public class Tienda {
     @Column(name = "correoElectronico", nullable = false, length = 100)
     private String correoElectronico;
 
+    @Column(name = "latitudTienda", nullable = false)
+    private double latitudTienda;
+
+    @Column(name = "longitudTienda", nullable = false)
+    private double longitudTienda;
+
     public Tienda() {
     }
 
-    public Tienda(Long idTienda, String ubicacion, String nombreTienda, String descripcionTienda, String telefonoTienda, String correoElectronico) {
+    public Tienda(Long idTienda, String ubicacion, String nombreTienda, String descripcionTienda, String telefonoTienda, String correoElectronico, double latitudTienda, double longitudTienda) {
         this.idTienda = idTienda;
         this.ubicacion = ubicacion;
         this.nombreTienda = nombreTienda;
         this.descripcionTienda = descripcionTienda;
         this.telefonoTienda = telefonoTienda;
         this.correoElectronico = correoElectronico;
+        this.latitudTienda = latitudTienda;
+        this.longitudTienda = longitudTienda;
     }
 
     public Long getIdTienda() {
@@ -88,5 +91,21 @@ public class Tienda {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public double getLatitudTienda() {
+        return latitudTienda;
+    }
+
+    public void setLatitudTienda(double latitudTienda) {
+        this.latitudTienda = latitudTienda;
+    }
+
+    public double getLongitudTienda() {
+        return longitudTienda;
+    }
+
+    public void setLongitudTienda(double longitudTienda) {
+        this.longitudTienda = longitudTienda;
     }
 }

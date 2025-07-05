@@ -1,5 +1,7 @@
 package pe.edu.upc.grupo1_arquiweb.dtos;
 
+import pe.edu.upc.grupo1_arquiweb.entities.Producto;
+
 import java.time.LocalDate;
 
 public class DescuentoDTO {
@@ -9,7 +11,7 @@ public class DescuentoDTO {
     private String codigoDescuento;
     private LocalDate fechaInicioDescuento;
     private LocalDate fechaFinDescuento;
-    private Long idProducto;
+    private Producto producto;
 
     public Long getIdDescuento() {
         return idDescuento;
@@ -51,11 +53,11 @@ public class DescuentoDTO {
         this.fechaFinDescuento = fechaFinDescuento;
     }
 
-    public Long getIdProducto() {
-        return idProducto;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setIdProducto(Long idProducto) {
-        this.idProducto = idProducto;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 }

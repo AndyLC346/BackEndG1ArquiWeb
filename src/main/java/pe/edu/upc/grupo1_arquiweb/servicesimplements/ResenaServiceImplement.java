@@ -33,4 +33,9 @@ public class ResenaServiceImplement implements IResenaService {
     public void delete(Long id) {
         rR.deleteById(id);
     }
+
+    @Override
+    public Resena searchId(Long id) {
+        return rR.findById(id).orElse(new Resena());
+    }
 }

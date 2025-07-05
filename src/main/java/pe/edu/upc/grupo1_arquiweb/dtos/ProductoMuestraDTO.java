@@ -1,9 +1,10 @@
 package pe.edu.upc.grupo1_arquiweb.dtos;
 
+import pe.edu.upc.grupo1_arquiweb.entities.Tienda;
 
 import java.time.LocalDate;
 
-public class ProductoDTO {
+public class ProductoMuestraDTO {
 
     private Long idProducto;
     private String nombreProducto;
@@ -12,7 +13,7 @@ public class ProductoDTO {
     private String categoriaProducto;
     private int stock;
     private LocalDate fechaCreacionProducto;
-    private Long idTienda;
+    private Tienda tienda;
 
     public Long getIdProducto() {
         return idProducto;
@@ -28,14 +29,6 @@ public class ProductoDTO {
 
     public void setNombreProducto(String nombreProducto) {
         this.nombreProducto = nombreProducto;
-    }
-
-    public String getDescripcionProducto() {
-        return descripcionProducto;
-    }
-
-    public void setDescripcionProducto(String descripcionProducto) {
-        this.descripcionProducto = descripcionProducto;
     }
 
     public double getPrecioProducto() {
@@ -54,6 +47,14 @@ public class ProductoDTO {
         this.categoriaProducto = categoriaProducto;
     }
 
+    public String getDescripcionProducto() {
+        return descripcionProducto;
+    }
+
+    public void setDescripcionProducto(String descripcionProducto) {
+        this.descripcionProducto = descripcionProducto;
+    }
+
     public int getStock() {
         return stock;
     }
@@ -70,11 +71,11 @@ public class ProductoDTO {
         this.fechaCreacionProducto = fechaCreacionProducto;
     }
 
-    public Long getIdTienda() {
-        return idTienda;
+    public Tienda getTienda() {
+        return tienda;
     }
 
-    public void setIdTienda(Long idTienda) {
-        this.idTienda = idTienda;
+    public void setTienda(Tienda tienda) {
+        this.tienda = tienda;
     }
 }

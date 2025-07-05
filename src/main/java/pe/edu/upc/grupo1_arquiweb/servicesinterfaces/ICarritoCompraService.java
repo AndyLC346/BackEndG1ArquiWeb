@@ -10,4 +10,5 @@ public interface ICarritoCompraService {
     public void insert (CarritoCompra cc);
     public void update(CarritoCompra cc);
     public void delete (Long id);
+    public CarritoCompra searchId(Long id);
 }

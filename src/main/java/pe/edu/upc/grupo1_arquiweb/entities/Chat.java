@@ -12,6 +12,9 @@ public class Chat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idChat;
 
+    @Column(name="contenido", nullable = false, length = 400)
+    private String contenido;
+
     @Column(name="fechaInicioChat", nullable = false)
     private LocalDate fechaInicioChat;
 
@@ -26,11 +29,20 @@ public class Chat {
     public Chat() {
     }
 
-    public Chat(Long idChat, LocalDate fechaInicioChat, Users user, Tienda tienda) {
+    public Chat(Long idChat,String contenido,LocalDate fechaInicioChat, Users user, Tienda tienda) {
         this.idChat = idChat;
+        this.contenido = contenido;
         this.fechaInicioChat = fechaInicioChat;
         this.user = user;
         this.tienda = tienda;
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
     }
 
     public Long getIdChat() {

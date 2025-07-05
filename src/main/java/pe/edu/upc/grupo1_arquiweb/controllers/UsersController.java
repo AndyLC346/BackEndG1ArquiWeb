@@ -45,4 +45,11 @@ public class UsersController {
         uS.delete(id);
     }
 
+    @GetMapping("/{id}")
+    public UsersDTO2 listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        UsersDTO2 dto = m.map(uS.searchId(id), UsersDTO2.class);
+        return dto;
+    }
+
 }

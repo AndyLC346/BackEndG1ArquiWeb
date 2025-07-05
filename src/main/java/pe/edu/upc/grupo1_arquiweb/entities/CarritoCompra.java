@@ -15,6 +15,9 @@ public class CarritoCompra {
     @Column(name = "fechaCreaCarritoCompra", nullable = false)
     private LocalDate fechaCreaCarritoCompra;
 
+    @Column(name = "cantidad", nullable = false)
+    private int cantidad;
+
     @ManyToOne
     @JoinColumn(name = "metodopago_id")
     private MetodoPago metodoPago;
@@ -30,9 +33,10 @@ public class CarritoCompra {
     public CarritoCompra() {
     }
 
-    public CarritoCompra(Long idCarritoCompra, LocalDate fechaCreaCarritoCompra, MetodoPago metodoPago, Producto producto, Users user) {
+    public CarritoCompra(Long idCarritoCompra, LocalDate fechaCreaCarritoCompra, int cantidad, MetodoPago metodoPago, Producto producto, Users user) {
         this.idCarritoCompra = idCarritoCompra;
         this.fechaCreaCarritoCompra = fechaCreaCarritoCompra;
+        this.cantidad = cantidad;
         this.metodoPago = metodoPago;
         this.producto = producto;
         this.user = user;
@@ -52,6 +56,14 @@ public class CarritoCompra {
 
     public void setFechaCreaCarritoCompra(LocalDate fechaCreaCarritoCompra) {
         this.fechaCreaCarritoCompra = fechaCreaCarritoCompra;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
     public MetodoPago getMetodoPago() {

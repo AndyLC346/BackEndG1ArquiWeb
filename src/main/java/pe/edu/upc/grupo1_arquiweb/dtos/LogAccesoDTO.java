@@ -1,5 +1,7 @@
 package pe.edu.upc.grupo1_arquiweb.dtos;
 
+import pe.edu.upc.grupo1_arquiweb.entities.Users;
+
 import java.time.LocalDate;
 
 public class LogAccesoDTO {
@@ -9,7 +11,7 @@ public class LogAccesoDTO {
     private String ip;
     private String navegador;
     private String sistemaOperativo;
-    private Long idUser;
+    private Users user;
 
     public Long getIdLogAcceso() {
         return idLogAcceso;
@@ -51,11 +53,11 @@ public class LogAccesoDTO {
         this.sistemaOperativo = sistemaOperativo;
     }
 
-    public Long getIdUser() {
-        return idUser;
+    public Users getUser() {
+        return user;
     }
 
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
+    public void setUser(Users user) {
+        this.user = user;
     }
 }

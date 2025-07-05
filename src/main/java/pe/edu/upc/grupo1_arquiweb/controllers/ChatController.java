@@ -43,4 +43,11 @@ public class ChatController {
     public void eliminar(@PathVariable("id") Long id) {
         cS.delete(id);
     }
+
+    @GetMapping("/{id}")
+    public ChatDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        ChatDTO dto = m.map(cS.searchId(id), ChatDTO.class);
+        return dto;
+    }
 }

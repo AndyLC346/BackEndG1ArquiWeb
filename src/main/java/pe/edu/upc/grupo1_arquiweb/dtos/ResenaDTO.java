@@ -1,5 +1,8 @@
 package pe.edu.upc.grupo1_arquiweb.dtos;
 
+import pe.edu.upc.grupo1_arquiweb.entities.Producto;
+import pe.edu.upc.grupo1_arquiweb.entities.Users;
+
 import java.time.LocalDate;
 
 public class ResenaDTO {
@@ -8,8 +11,8 @@ public class ResenaDTO {
     private double calificacion;
     private String comentario;
     private LocalDate fecha;
-    private Long idUser;
-    private Long idProducto;
+    private Users user;
+    private Producto producto;
 
     public Long getIdResena() {
         return idResena;
@@ -43,19 +46,19 @@ public class ResenaDTO {
         this.fecha = fecha;
     }
 
-    public Long getIdUser() {
-        return idUser;
+    public Users getUser() {
+        return user;
     }
 
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
+    public void setUser(Users user) {
+        this.user = user;
     }
 
-    public Long getIdProducto() {
-        return idProducto;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setIdProducto(Long idProducto) {
-        this.idProducto = idProducto;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 }

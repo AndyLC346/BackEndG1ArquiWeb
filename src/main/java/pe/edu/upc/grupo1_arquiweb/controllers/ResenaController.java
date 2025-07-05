@@ -11,14 +11,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/reseñas")
+@RequestMapping("/resenas")
 public class ResenaController {
 
     @Autowired
     private IResenaService rS;
 
 
-    @GetMapping
+    @GetMapping("/listadoresena")
     public List<ResenaDTO> listar() {
         return rS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -43,6 +43,14 @@ public class ResenaController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Long id) {
         rS.delete(id);
+    }
+
+
+    @GetMapping("/{id}")
+    public ResenaDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        ResenaDTO dto = m.map(rS.searchId(id), ResenaDTO.class);
+        return dto;
     }
 
 }

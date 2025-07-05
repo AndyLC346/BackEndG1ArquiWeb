@@ -10,4 +10,5 @@ public interface IMetodoPagoService {
     public void insert (MetodoPago mp);
     public void update(MetodoPago mp);
     public void delete (Long id);
+    public MetodoPago searchId(Long id);
 }

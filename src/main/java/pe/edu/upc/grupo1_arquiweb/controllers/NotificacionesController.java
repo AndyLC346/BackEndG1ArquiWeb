@@ -43,4 +43,11 @@ public class NotificacionesController {
     public void eliminar(@PathVariable("id") Long id) {
         nS.delete(id);
     }
+
+    @GetMapping("/{id}")
+    public NotificacionesDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        NotificacionesDTO dto = m.map(nS.searchId(id), NotificacionesDTO.class);
+        return dto;
+    }
 }

@@ -1,5 +1,6 @@
 package pe.edu.upc.grupo1_arquiweb.dtos;
 
+
 public class TiendaDTO {
 
     private Long idTienda;
@@ -8,6 +9,8 @@ public class TiendaDTO {
     private String descripcionTienda;
     private String telefonoTienda;
     private String correoElectronico;
+    private double latitudTienda;
+    private double longitudTienda;
 
     public Long getIdTienda() {
         return idTienda;
@@ -55,5 +58,21 @@ public class TiendaDTO {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public double getLatitudTienda() {
+        return latitudTienda;
+    }
+
+    public void setLatitudTienda(double latitudTienda) {
+        this.latitudTienda = latitudTienda;
+    }
+
+    public double getLongitudTienda() {
+        return longitudTienda;
+    }
+
+    public void setLongitudTienda(double longitudTienda) {
+        this.longitudTienda = longitudTienda;
     }
 }

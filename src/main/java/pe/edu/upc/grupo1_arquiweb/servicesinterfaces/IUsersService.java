@@ -10,4 +10,5 @@ public interface IUsersService {
     public void insert (Users u);
     public void update(Users u);
     public void delete (Long id);
+    public Users searchId(Long id);
 }

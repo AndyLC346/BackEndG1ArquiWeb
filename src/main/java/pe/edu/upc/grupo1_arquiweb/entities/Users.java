@@ -19,9 +19,53 @@ public class Users implements Serializable {
     private String password;
     private Boolean enabled;
 
+    @Column(length = 30, unique = true)
+    private String nombres;
+
+    @Column(length = 30, unique = true)
+    private String apellidos;
+
+    @Column(length = 30, unique = true)
+    private String emailUsuario;
+
+    @Column(length = 9, unique = true)
+    private String telefono;
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Role> roles;
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getEmailUsuario() {
+        return emailUsuario;
+    }
+
+    public void setEmailUsuario(String emailUsuario) {
+        this.emailUsuario = emailUsuario;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
     public Long getIdUser() {
         return idUser;

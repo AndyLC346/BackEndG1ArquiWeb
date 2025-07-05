@@ -33,4 +33,9 @@ public class NotificacionesServiceImplement implements INotificacionesService {
     public void delete(Long id) {
         nR.deleteById(id);
     }
+
+    @Override
+    public Notificaciones searchId(Long id) {
+        return nR.findById(id).orElse(new Notificaciones());
+    }
 }

@@ -33,4 +33,9 @@ public class DescuentoServiceImplement implements IDescuentoService {
     public void delete(Long id) {
         dR.deleteById(id);
     }
+
+    @Override
+    public Descuento searchId(Long id) {
+        return dR.findById(id).orElse(new Descuento());
+    }
 }

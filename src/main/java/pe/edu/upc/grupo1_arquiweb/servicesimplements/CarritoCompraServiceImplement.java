@@ -33,4 +33,9 @@ public class CarritoCompraServiceImplement implements ICarritoCompraService {
     public void delete(Long id) {
         ccR.deleteById(id);
     }
+
+    @Override
+    public CarritoCompra searchId(Long id) {
+        return ccR.findById(id).orElse(new CarritoCompra());
+    }
 }

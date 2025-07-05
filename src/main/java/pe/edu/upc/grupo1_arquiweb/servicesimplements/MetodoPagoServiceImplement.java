@@ -33,4 +33,9 @@ public class MetodoPagoServiceImplement implements IMetodoPagoService {
     public void delete(Long id) {
         mR.deleteById(id);
     }
+
+    @Override
+    public MetodoPago searchId(Long id) {
+        return mR.findById(id).orElse(new MetodoPago());
+    }
 }

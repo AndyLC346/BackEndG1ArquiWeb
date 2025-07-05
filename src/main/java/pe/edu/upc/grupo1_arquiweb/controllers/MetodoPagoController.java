@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/metodos_de_pago")
+@RequestMapping("/metodosdepago")
 public class MetodoPagoController {
 
     @Autowired
@@ -42,5 +42,12 @@ public class MetodoPagoController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Long id) {
         mpS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public MetodoPagoDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        MetodoPagoDTO dto = m.map(mpS.searchId(id), MetodoPagoDTO.class);
+        return dto;
     }
 }
