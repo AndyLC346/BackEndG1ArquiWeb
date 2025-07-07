@@ -1,6 +1,8 @@
 package pe.edu.upc.grupo1_arquiweb.servicesimplements;
 
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.grupo1_arquiweb.entities.Users;
 import pe.edu.upc.grupo1_arquiweb.repositories.IUsersRepository;
@@ -12,6 +14,8 @@ import java.util.List;
 public class UsersServiceImplement implements IUsersService {
     @Autowired
     private IUsersRepository uR;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public List<Users> list() {
@@ -20,13 +24,16 @@ public class UsersServiceImplement implements IUsersService {
 
     @Override
     public void insert(Users u) {
+        u.setPassword(passwordEncoder.encode(u.getPassword()));
         uR.save(u);
     }
 
     @Override
     public void update(Users u) {
+        u.setPassword(passwordEncoder.encode(u.getPassword()));
         uR.save(u);
     }
+
 
     @Override
     public void delete(Long id) {
