@@ -38,4 +38,14 @@ public class DescuentoServiceImplement implements IDescuentoService {
     public Descuento searchId(Long id) {
         return dR.findById(id).orElse(new Descuento());
     }
+
+    @Override
+    public List<Object[]> listarDescuentosVigentes() {
+        return dR.listarDescuentosVigentes();
+    }
+
+    @Override
+    public List<Descuento> obtenerDescuentosOrdenados() {
+        return dR.listarDescuentosOrdenadosPorPorcentaje();
+    }
 }

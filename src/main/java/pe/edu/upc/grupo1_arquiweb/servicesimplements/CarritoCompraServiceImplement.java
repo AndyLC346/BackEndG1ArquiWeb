@@ -30,12 +30,20 @@ public class CarritoCompraServiceImplement implements ICarritoCompraService {
     }
 
     @Override
-    public void delete(Long id) {
-        ccR.deleteById(id);
+    public CarritoCompra searchId(Long id) {
+        return ccR.findById(id).orElse(new CarritoCompra());
     }
 
     @Override
-    public CarritoCompra searchId(Long id) {
-        return ccR.findById(id).orElse(new CarritoCompra());
+    public void delete(Long id) {
+        ccR.deleteById(id);
+    }
+    @Override
+    public List<Object[]> ordenarCarritoCompra() {
+        return ccR.ordenarCarritoCompra();
+    }
+    @Override
+    public List<CarritoCompra> BuscarCarritoCompraXID(int idUsuario) {
+        return ccR.BuscarCarritoCompraXID(idUsuario);
     }
 }

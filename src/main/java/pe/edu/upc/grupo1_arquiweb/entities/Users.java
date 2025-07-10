@@ -2,6 +2,7 @@ package pe.edu.upc.grupo1_arquiweb.entities;
 
 import jakarta.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
 
@@ -34,6 +35,19 @@ public class Users implements Serializable {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Role> roles;
+
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties("user")
+    private List<CarritoCompra> carritos;
+
+    public List<CarritoCompra> getCarritos() {
+        return carritos;
+    }
+
+    public void setCarritos(List<CarritoCompra> carritos) {
+        this.carritos = carritos;
+    }
 
     public String getNombres() {
         return nombres;

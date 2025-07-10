@@ -4,6 +4,7 @@ package pe.edu.upc.grupo1_arquiweb.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.grupo1_arquiweb.dtos.CantidadProductosDTO;
 import pe.edu.upc.grupo1_arquiweb.dtos.ProductoMuestraDTO;
 import pe.edu.upc.grupo1_arquiweb.entities.Producto;
 import pe.edu.upc.grupo1_arquiweb.servicesinterfaces.IProductoService;
@@ -58,6 +59,22 @@ public class ProductoController {
         return pS.search(nom).stream()
                 .map(p -> new ModelMapper().map(p, ProductoMuestraDTO.class))
                 .collect(Collectors.toList());
+    }
+
+    @GetMapping("/cantidadesproductos")
+    public List<CantidadProductosDTO> listarCantidadProductos() {
+        return pS.qualitybyStore();
+    }
+
+
+    @GetMapping("/productoscomparar")
+    public List<ProductoMuestraDTO> comparar(
+            @RequestParam Long id1,
+            @RequestParam Long id2) {
+
+        return pS.comparar(id1, id2).stream()
+                .map(p -> new ModelMapper().map(p, ProductoMuestraDTO.class))
+                .toList();
     }
 
 }

@@ -1,5 +1,6 @@
 package pe.edu.upc.grupo1_arquiweb.servicesinterfaces;
 
+import pe.edu.upc.grupo1_arquiweb.dtos.UsuariosEstadoDTO;
 import pe.edu.upc.grupo1_arquiweb.entities.Users;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface IUsersService {
     public void update(Users u);
     public void delete (Long id);
     public Users searchId(Long id);
+    List<UsuariosEstadoDTO> obtenerUsuariosPorEstado();
 }

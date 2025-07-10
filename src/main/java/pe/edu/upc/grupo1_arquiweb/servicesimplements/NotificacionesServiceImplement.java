@@ -38,4 +38,9 @@ public class NotificacionesServiceImplement implements INotificacionesService {
     public Notificaciones searchId(Long id) {
         return nR.findById(id).orElse(new Notificaciones());
     }
+
+    @Override
+    public List<Notificaciones> searchByLeido(boolean estado) {
+        return nR.buscarPorLeido(estado);
+    }
 }

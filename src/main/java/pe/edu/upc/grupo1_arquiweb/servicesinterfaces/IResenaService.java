@@ -11,4 +11,6 @@ public interface IResenaService {
     public void update(Resena r);
     public void delete (Long id);
     public Resena searchId(Long id);
+    List<Resena> searchrating(double valor);
+    List<Resena> listReviewsRating();
 }

@@ -1,5 +1,6 @@
 package pe.edu.upc.grupo1_arquiweb.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -19,16 +20,16 @@ public class CarritoCompra {
     private int cantidad;
 
     @ManyToOne
-    @JoinColumn(name = "metodopago_id")
-    private MetodoPago metodoPago;
+    @JsonIgnoreProperties({"carritos", "hibernateLazyInitializer", "handler"})
+    private Users user;
 
     @ManyToOne
-    @JoinColumn(name = "producto_id")
+    @JsonIgnoreProperties({"carritos", "hibernateLazyInitializer", "handler"})
     private Producto producto;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private Users user;
+    @JsonIgnoreProperties({"carritos", "hibernateLazyInitializer", "handler"})
+    private MetodoPago metodoPago;
 
     public CarritoCompra() {
     }

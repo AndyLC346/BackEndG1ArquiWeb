@@ -53,4 +53,20 @@ public class ResenaController {
         return dto;
     }
 
+    @GetMapping("/buscarporcalificacion")
+    public List<ResenaDTO> buscarPorCalificacion(@RequestParam("valor") double valor) {
+        return rS.searchrating(valor)
+                .stream()
+                .map(r -> new ModelMapper().map(r, ResenaDTO.class))
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping("/ordenarcalificacion")
+    public List<ResenaDTO> listarOrdenadasPorCalificacion() {
+        ModelMapper mapper = new ModelMapper();
+        return rS.listReviewsRating().stream()
+                .map(r -> mapper.map(r, ResenaDTO.class))
+                .collect(Collectors.toList());
+    }
+
 }

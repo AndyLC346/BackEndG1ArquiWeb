@@ -11,4 +11,5 @@ public interface INotificacionesService {
     public void update(Notificaciones n);
     public void delete (Long id);
     public Notificaciones searchId(Long id);
+    List<Notificaciones> searchByLeido(boolean estado);
 }

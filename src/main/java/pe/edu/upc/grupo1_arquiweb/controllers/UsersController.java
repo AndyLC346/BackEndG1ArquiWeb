@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.grupo1_arquiweb.dtos.UsersDTO;
 import pe.edu.upc.grupo1_arquiweb.dtos.UsersDTO2;
+import pe.edu.upc.grupo1_arquiweb.dtos.UsuariosEstadoDTO;
 import pe.edu.upc.grupo1_arquiweb.entities.Users;
 import pe.edu.upc.grupo1_arquiweb.servicesinterfaces.IUsersService;
 
@@ -50,6 +51,11 @@ public class UsersController {
         ModelMapper m = new ModelMapper();
         UsersDTO2 dto = m.map(uS.searchId(id), UsersDTO2.class);
         return dto;
+    }
+
+    @GetMapping("/usuarioestados")
+    public List<UsuariosEstadoDTO> obtenerCantidadPorEstado() {
+        return uS.obtenerUsuariosPorEstado();
     }
 
 }

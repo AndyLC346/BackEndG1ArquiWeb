@@ -11,4 +11,6 @@ public interface IMetodoPagoService {
     public void update(MetodoPago mp);
     public void delete (Long id);
     public MetodoPago searchId(Long id);
+    List<MetodoPago> searchByTipo(String tipo);
+    List<String[]> contarMetodosPorTipo();
 }

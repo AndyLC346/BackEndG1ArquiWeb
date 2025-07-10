@@ -1,8 +1,10 @@
 package pe.edu.upc.grupo1_arquiweb.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "Producto")
@@ -33,6 +35,22 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "Tienda_id")
     private Tienda tienda;
+
+    @OneToMany(mappedBy = "producto")
+    @JsonIgnoreProperties("producto")
+    private List<CarritoCompra> carritos;
+
+    public Producto(List<CarritoCompra> carritos) {
+        this.carritos = carritos;
+    }
+
+    public List<CarritoCompra> getCarritos() {
+        return carritos;
+    }
+
+    public void setCarritos(List<CarritoCompra> carritos) {
+        this.carritos = carritos;
+    }
 
     public Producto() {
     }

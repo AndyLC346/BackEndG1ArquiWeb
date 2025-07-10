@@ -50,4 +50,12 @@ public class NotificacionesController {
         NotificacionesDTO dto = m.map(nS.searchId(id), NotificacionesDTO.class);
         return dto;
     }
+
+    @GetMapping("/buscarporleido")
+    public List<NotificacionesDTO> buscarPorLeido(@RequestParam("estado") boolean estado) {
+        return nS.searchByLeido(estado)
+                .stream()
+                .map(n -> new ModelMapper().map(n, NotificacionesDTO.class))
+                .collect(Collectors.toList());
+    }
 }

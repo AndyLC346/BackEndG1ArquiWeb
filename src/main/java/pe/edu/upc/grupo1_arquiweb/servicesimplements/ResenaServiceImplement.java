@@ -38,4 +38,14 @@ public class ResenaServiceImplement implements IResenaService {
     public Resena searchId(Long id) {
         return rR.findById(id).orElse(new Resena());
     }
+
+    @Override
+    public List<Resena> searchrating(double valor) {
+        return rR.buscarPorCalificacion(valor);
+    }
+
+    @Override
+    public List<Resena> listReviewsRating() {
+        return rR.listarResenasCalificacion();
+    }
 }

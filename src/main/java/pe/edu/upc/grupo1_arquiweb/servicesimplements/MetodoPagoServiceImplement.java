@@ -38,4 +38,14 @@ public class MetodoPagoServiceImplement implements IMetodoPagoService {
     public MetodoPago searchId(Long id) {
         return mR.findById(id).orElse(new MetodoPago());
     }
+
+    @Override
+    public List<MetodoPago> searchByTipo(String tipo) {
+        return mR.buscarPorTipo(tipo);
+    }
+
+    @Override
+    public List<String[]> contarMetodosPorTipo() {
+        return mR.contarMetodosPorTipo();
+    }
 }

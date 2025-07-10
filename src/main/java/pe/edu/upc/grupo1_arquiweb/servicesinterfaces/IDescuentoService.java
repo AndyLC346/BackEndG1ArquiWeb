@@ -11,4 +11,6 @@ public interface IDescuentoService {
     public void update(Descuento d);
     public void delete (Long id);
     public Descuento searchId(Long id);
+    public List<Object[]> listarDescuentosVigentes();
+    public List<Descuento>obtenerDescuentosOrdenados();
 }

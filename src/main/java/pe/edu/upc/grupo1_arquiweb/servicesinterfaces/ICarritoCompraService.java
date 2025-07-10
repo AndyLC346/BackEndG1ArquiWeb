@@ -11,4 +11,6 @@ public interface ICarritoCompraService {
     public void update(CarritoCompra cc);
     public void delete (Long id);
     public CarritoCompra searchId(Long id);
+    public List<Object[]> ordenarCarritoCompra();
+    public List<CarritoCompra> BuscarCarritoCompraXID(int idUsuario);
 }

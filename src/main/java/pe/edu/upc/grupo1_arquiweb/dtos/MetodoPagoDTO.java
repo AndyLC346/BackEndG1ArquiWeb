@@ -7,9 +7,18 @@ import java.time.LocalDate;
 public class MetodoPagoDTO {
 
     private Long idMetodoPago;
-    private String Tipo;
+    private String tipo;
     private LocalDate vencimientoMetodo;
     private Users user;
+
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
     public Long getIdMetodoPago() {
         return idMetodoPago;
@@ -17,14 +26,6 @@ public class MetodoPagoDTO {
 
     public void setIdMetodoPago(Long idMetodoPago) {
         this.idMetodoPago = idMetodoPago;
-    }
-
-    public String getTipo() {
-        return Tipo;
-    }
-
-    public void setTipo(String tipo) {
-        Tipo = tipo;
     }
 
     public LocalDate getVencimientoMetodo() {
