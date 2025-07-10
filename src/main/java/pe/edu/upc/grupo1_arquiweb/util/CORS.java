@@ -29,7 +29,7 @@ public class CORS implements Filter {
 
 
 
-		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
 
 		response.setHeader("Access-Control-Allow-Methods", "DELETE, GET, OPTIONS, PATCH, POST, PUT");
 
@@ -39,7 +39,7 @@ public class CORS implements Filter {
 
 				"x-requested-with, authorization, Content-Type, Authorization, credential, X-XSRF-TOKEN");
 
-
+		response.setHeader("Access-Control-Allow-Credentials", "true");
 
 		if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
 

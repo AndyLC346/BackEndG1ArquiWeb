@@ -16,8 +16,11 @@ public class Users implements Serializable {
 
     @Column(length = 30, unique = true)
     private String username;
+
     @Column(length = 200)
     private String password;
+
+    @Column(name="enabled", nullable = false)
     private Boolean enabled;
 
     @Column(length = 30, unique = true)

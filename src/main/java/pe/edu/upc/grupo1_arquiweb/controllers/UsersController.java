@@ -30,6 +30,7 @@ public class UsersController {
 
     @PostMapping
     public void insertar(@RequestBody UsersDTO dto) {
+        System.out.println("Enabled value received: " + dto.getEnabled());
         ModelMapper m = new ModelMapper();
         Users u = m.map(dto, Users.class);
         uS.insert(u);
